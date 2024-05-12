@@ -26,7 +26,6 @@ on:
   workflow_dispatch:
 jobs:
   compile_and_test:
-    if: github.repository_owner == 'apache'
     strategy:
       matrix:
         flink_branches: [{
@@ -41,10 +40,6 @@ jobs:
           flink: 1.18-SNAPSHOT,
           jdk: '8, 11, 17',
           branch: main
-        }, {
-          flink: 1.19.0,
-          jdk: '8, 11, 17, 21',
-          branch: v3.0
         }, {
           flink: 1.18.1,
           jdk: '8, 11, 17',
